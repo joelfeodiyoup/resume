@@ -10,6 +10,7 @@ const links: {path: string, label: React.ReactNode}[] = [
 
 export const Header = () => {
   return <section className={styles['header-layout']}>
+    <h1>Joel Mundy</h1>
     <ul className={styles.links}>{links.map(link => <Link key={link.path} to={link.path}>{link.label}</Link>)}</ul>
   </section>
 }

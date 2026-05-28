@@ -1,7 +1,17 @@
 .header-layout {
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-highlight);
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
   .links {
+    margin: 0;
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     padding-left: 0;
+    text-wrap: nowrap;
   }
 }
