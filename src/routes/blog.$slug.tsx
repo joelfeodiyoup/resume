@@ -15,10 +15,6 @@ function BlogPost() {
 
   return (
     <div className="mx-auto max-w-4xl p-8">
-      <Link to="/blog" className="mb-8 inline-block text-blue-600 hover:underline">
-        ← Back to blog
-      </Link>
-
       <article className="prose prose-lg max-w-none">
         <h1 className="mb-2 text-4xl font-bold">{post.title}</h1>
         <time className="mb-8 block text-gray-600">

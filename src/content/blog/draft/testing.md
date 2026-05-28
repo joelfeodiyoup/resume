@@ -1,0 +1,3 @@
+- what do I test?
+- what do I not test?
+- what does test coverage mean?

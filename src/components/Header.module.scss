@@ -6,9 +6,15 @@
   position: sticky;
   top: 0;
   background-color: var(--bg-highlight);
+  .title-section {
+    display: inline-flex;
+    column-gap: 0.5rem;
+    align-items: baseline;
+  }
   h1 {
     margin: 0;
     font-size: 1.5rem;
+    color: var(--fg);
   }
   .links {
     margin: 0;
