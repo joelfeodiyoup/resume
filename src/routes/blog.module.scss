@@ -1,5 +1,6 @@
 .blog-layout {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
   gap: 4rem;
   flex-wrap: wrap;
 }
