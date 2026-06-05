@@ -1,8 +1,8 @@
 ---
-title: SOLID Software architecture
+title: SOLID software architecture principles
 date: 2026-05-28
-slug: software-architecture
-excerpt: 
+slug: SOLID principles
+excerpt:
 ---
 
 `SOLID` is pretty popular, but what does it mean, in reality? How does it relate to hexagonal, N-tiered, etc, architecture?
@@ -22,12 +22,14 @@ A module should have only one reason to change - meaning one stakeholder, one bu
 This isn't about "do one thing". It's about not mixing different concerns. **Don't give one module multiple reasons it might need to change**.
 
 Things that can violate it:
+
 - multiple teams need to touch the same file for unrelated features
 - fixing a bug in one feature breaks another
 - testing is difficult. you need to mock unrelated dependencies
 - 'And' in class name
 
 How hexagonal architecture helps to address this:
+
 - separating business layer from infrastructure means that either can change without affecting the other.
 - ports encourage you to think about responsibilities
 - 'use cases' are naturally single-responsibility
@@ -40,7 +42,9 @@ An example: I recently had code handling events inline. To add new events, I'd n
 
 ```typescript
 // before: closed to extension
-if (eventType === 'user.created') { /* handle */ }
+if (eventType === 'user.created') {
+  /* handle */
+}
 
 // after: open to extension
 eventBus.on(eventType, handler) // just register new handlers
@@ -57,6 +61,7 @@ If your code depends on an interface, **every implementation should be swappable
 When I first saw this, I assumed it must relate to a confusing Russian mathematical theorem. But it's not so much, and personally I think this one is quite interesting in that the interface doesn't always capture everything, and thinking about this principle reveals that.
 
 For example, things that can break this principle:
+
 - implementations throwing particular kinds of inconsistent errors. E.g. "NotImplementedError". A fix for this could be that your implementation actually returns a specific interface stating the error, so that then the interface is more explicit to that behaviour
 - one implementation may return a sorted list, while another doesn't. The consumer may decide to rely upon that behaviour, but since it's inconsistently applied, changing implementations breaks the assumption. The interface can't enforce that behaviour (I'm not currently aware of a language which can enforce that). A solution is to document it in interface comments. E.g. "returns sorted list". This is just a soft suggestion to the dev to help avoid breaking the principle. But it could help.
 
@@ -67,8 +72,10 @@ interface Catalog {
   /**
    * Returns sorted list of items
    */
-  items: Item[];
-  update: Promise<{success: true, item: Item} | {success: false, error: string}>
+  items: Item[]
+  update: Promise<
+    { success: true; item: Item } | { success: false; error: string }
+  >
 }
 ```
 
@@ -97,5 +104,6 @@ The "inversion" is that infrastructure depends on interfaces defined by business
 This is the heart of hexagonal architecture. Code relies upon ports (interfaces), and infrastructure implements them (adapters). Benefits are that it makes testing easier, since those dependencies (interfaces) can be provided with different values.
 
 Ways to violate this principle:
+
 - `constructor(private repo: PostgresUserRepository) { /* ... */ }`
 - additionally any direct dependencies to third parties violate this. E.g. `import { something } from SomePackage /* ... */ something()`. You should use judgement/experience to decide when to abstract that to allow more effectively swapping it out. Hexagonal ideas can help in creating ports/adapters allowing for that abstraction.
