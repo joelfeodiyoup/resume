@@ -5,9 +5,31 @@ slug: software-architectures
 excerpt:
 ---
 
-## transaction script pattern
+## code organization patterns
 
-## service oriented architecture
+- transaction script
+- domain model pattern
+- table module
 
-cqrs
-event sourcing
+## architectural styles
+
+- layered architecture (N-tier)
+- hexagonal architecture (ports & adapters)
+- clean architecture
+- onion architecture
+- microservices architecture
+- service-oriented architecture
+- event-driven architecture
+
+## tactical patterns
+
+- cqrs
+- event sourcing
+- saga pattern
+- api gateway pattern
+
+## data patterns
+
+- repository pattern
+- unit of work
+- data mapper vs active record

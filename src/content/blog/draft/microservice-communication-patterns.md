@@ -1,0 +1,6 @@
+- pub/sub
+- work queue
+- request/reply queue
+- circuit breaker
+- bulkhead
+- retry with backoff

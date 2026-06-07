@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { blogContent } from '../lib/blog'
-import styles from './blog.module.scss';
+import styles from './blog.module.scss'
 
 export const Route = createFileRoute('/blog/')({
   component: BlogIndex,
@@ -10,7 +10,14 @@ function BlogIndex() {
   return (
     <div className="mx-auto max-w-4xl p-8">
       <h1 className="mb-8 text-4xl font-bold">Blog</h1>
-      <p>The purpose of these blogs is to demonstrate some things I'm interested in, and also for myself to clarify in my head what I think about some things.</p>
+      <p>
+        The purpose of these blogs is to demonstrate some things I'm interested
+        in.
+      </p>
+      <p>
+        It's also for myself to clarify in my head what I think about some
+        things.
+      </p>
       <div className={styles['blog-layout']}>
         {blogContent.allContent.map((post) => (
           <article key={post.slug} className="border-b pb-8">
