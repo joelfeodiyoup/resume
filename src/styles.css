@@ -48,6 +48,9 @@ h1, h2, h3 {
   font-weight: 700;
   margin: 2rem 0 1rem;
 }
+h2 {
+  background: var(--accent)
+}
 
 li {
   list-style-type: "+ ";
@@ -61,7 +64,7 @@ a {
   }
 }
 pre {
-  color: black;
+  background: black;
   padding: 0.5rem;
 }
 code { color: var(--accent); }
