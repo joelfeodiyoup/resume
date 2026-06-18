@@ -60,4 +60,8 @@ a {
     color: var(--accent-highlight);
   }
 }
+pre {
+  color: black;
+  padding: 0.5rem;
+}
 code { color: var(--accent); }
