@@ -6,7 +6,7 @@ export const Route = createFileRoute('/demo-projects/')({
 })
 
 function RouteComponent() {
-  return demoProjectsContent.allContent.map(project => (
+  return demoProjectsContent.allContent.map((project) => (
     <div>{project.title}</div>
   ))
 }

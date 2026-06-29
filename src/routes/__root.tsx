@@ -1,4 +1,4 @@
-import { HeadContent, createRootRoute } from '@tanstack/react-router'
+import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 
 import appCss from '../styles.css?url'
 import { Header } from '#/components/Header'
@@ -46,8 +46,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
               render: <TanStackRouterDevtoolsPanel />,
             },
           ]}
-        />
-        <Scripts /> */}
+        />*/}
+        <Scripts />
       </body>
     </html>
   )

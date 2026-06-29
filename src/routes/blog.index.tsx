@@ -11,12 +11,19 @@ function BlogIndex() {
     <div className="mx-auto max-w-4xl p-8">
       <h1 className="mb-8 text-4xl font-bold">Blog</h1>
       <p>
-        The purpose of these blogs is to demonstrate some things I'm interested
-        in.
+        The purpose of these blogs is to catalogue some things I'm interested
+        in, or know something about. In my experience, the everyday life of a
+        developer is usually spent implementing things, and refreshing knowledge
+        as and when it's required. i.e. the amount of knowledge in my readily
+        accessible memory is considerably less than what I've been exposed to at
+        different points in time. So here I'm trying to consolidate some things.
       </p>
       <p>
-        It's also for myself to clarify in my head what I think about some
-        things.
+        These entries are also for myself to clarify in my head what I think
+        about some things. There are some theories about 'exended mind thesis'
+        etc about offloading parts of our memory, or feynman's approach to
+        learning by explaining concepts to himself. I think these are
+        interesting.
       </p>
       <div className={styles['blog-layout']}>
         {blogContent.allContent.map((post) => (

@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as WorkExperienceIndexRouteImport } from './routes/work-experience.index'
+import { Route as PersonalBlogIndexRouteImport } from './routes/personal-blog.index'
 import { Route as DemoProjectsIndexRouteImport } from './routes/demo-projects.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as AboutIndexRouteImport } from './routes/about.index'
@@ -25,6 +26,11 @@ const IndexRoute = IndexRouteImport.update({
 const WorkExperienceIndexRoute = WorkExperienceIndexRouteImport.update({
   id: '/work-experience/',
   path: '/work-experience/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PersonalBlogIndexRoute = PersonalBlogIndexRouteImport.update({
+  id: '/personal-blog/',
+  path: '/personal-blog/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemoProjectsIndexRoute = DemoProjectsIndexRouteImport.update({
@@ -60,6 +66,7 @@ export interface FileRoutesByFullPath {
   '/about/': typeof AboutIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/demo-projects/': typeof DemoProjectsIndexRoute
+  '/personal-blog/': typeof PersonalBlogIndexRoute
   '/work-experience/': typeof WorkExperienceIndexRoute
 }
 export interface FileRoutesByTo {
@@ -69,6 +76,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutIndexRoute
   '/blog': typeof BlogIndexRoute
   '/demo-projects': typeof DemoProjectsIndexRoute
+  '/personal-blog': typeof PersonalBlogIndexRoute
   '/work-experience': typeof WorkExperienceIndexRoute
 }
 export interface FileRoutesById {
@@ -79,6 +87,7 @@ export interface FileRoutesById {
   '/about/': typeof AboutIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/demo-projects/': typeof DemoProjectsIndexRoute
+  '/personal-blog/': typeof PersonalBlogIndexRoute
   '/work-experience/': typeof WorkExperienceIndexRoute
 }
 export interface FileRouteTypes {
@@ -90,6 +99,7 @@ export interface FileRouteTypes {
     | '/about/'
     | '/blog/'
     | '/demo-projects/'
+    | '/personal-blog/'
     | '/work-experience/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -99,6 +109,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/blog'
     | '/demo-projects'
+    | '/personal-blog'
     | '/work-experience'
   id:
     | '__root__'
@@ -108,6 +119,7 @@ export interface FileRouteTypes {
     | '/about/'
     | '/blog/'
     | '/demo-projects/'
+    | '/personal-blog/'
     | '/work-experience/'
   fileRoutesById: FileRoutesById
 }
@@ -118,6 +130,7 @@ export interface RootRouteChildren {
   AboutIndexRoute: typeof AboutIndexRoute
   BlogIndexRoute: typeof BlogIndexRoute
   DemoProjectsIndexRoute: typeof DemoProjectsIndexRoute
+  PersonalBlogIndexRoute: typeof PersonalBlogIndexRoute
   WorkExperienceIndexRoute: typeof WorkExperienceIndexRoute
 }
 
@@ -135,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/work-experience'
       fullPath: '/work-experience/'
       preLoaderRoute: typeof WorkExperienceIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/personal-blog/': {
+      id: '/personal-blog/'
+      path: '/personal-blog'
+      fullPath: '/personal-blog/'
+      preLoaderRoute: typeof PersonalBlogIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo-projects/': {
@@ -182,6 +202,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutIndexRoute: AboutIndexRoute,
   BlogIndexRoute: BlogIndexRoute,
   DemoProjectsIndexRoute: DemoProjectsIndexRoute,
+  PersonalBlogIndexRoute: PersonalBlogIndexRoute,
   WorkExperienceIndexRoute: WorkExperienceIndexRoute,
 }
 export const routeTree = rootRouteImport

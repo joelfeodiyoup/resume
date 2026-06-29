@@ -1,0 +1,24 @@
+---
+title: DB Tree Permission System
+date: 2024-06-15
+slug: isometric-browser-game
+excerpt:
+---
+
+This is a solution to build a system that:
+
+- stores objects in a tree structure (i.e. parent/child relationships)
+- objects are either a 'Task' or 'Work Area'
+- users can be assigned a 'role' at any given node in the tree
+- permissions on any node are derived based upon which roles they have in ancestors or descendants
+
+This demonstrates a few technical features:
+
+- DB schema design:
+  - achieving polymorphism here through class table inheritance (with consideration of other possibilities that could have been used)
+  - modelling a tree structure via closure tables, to optimise for fast reads (with consideration of other possibilities that could have been used)
+- slightly complex SQL queries
+- some light hexagonal architecture in the API layer
+- unit testing of permissions system
+
+https://github.com/joelfeodiyoup/recursive-database-draft

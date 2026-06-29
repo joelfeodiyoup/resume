@@ -6,27 +6,12 @@ export interface BlogPost {
   html: string
 }
 
-type ModuleRecord = Record<string, {attributes: any, html: string}>
+type ModuleRecord = Record<string, { attributes: any; html: string }>
 
 // const getModules: (path: string) => ModuleRecord = (path) => import.meta.glob<{ attributes: any; html: string }>(
 //   path,
 //   { eager: true }
 // )
-
-const blogModules = import.meta.glob<{ attributes: any; html: string }>(
-  '../content/blog/*.md',
-  { eager: true }
-)
-
-const demoProjectsModules = import.meta.glob<{ attributes: any; html: string }>(
-  '../content/demo-projects/*.md',
-  { eager: true }
-)
-
-interface IContent<T> {
-  allContent: T[];
-  getContent: (slug: string) => T | undefined;
-}
 
 export const parseModules = (modules: ModuleRecord) => {
   const allContent = Object.entries(modules)
@@ -41,13 +26,30 @@ export const parseModules = (modules: ModuleRecord) => {
       }
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-  const getContent = (slug: string) => allContent.find((post) => post.slug === slug);
+  const getContent = (slug: string) =>
+    allContent.find((post) => post.slug === slug)
 
   return {
     allContent,
-    getContent
+    getContent,
   }
-} 
+}
 
-export const blogContent = parseModules(blogModules);
-export const demoProjectsContent = parseModules(demoProjectsModules);
+const blogModules = import.meta.glob<{ attributes: any; html: string }>(
+  '../content/blog/*.md',
+  { eager: true },
+)
+
+const demoProjectsModules = import.meta.glob<{ attributes: any; html: string }>(
+  '../content/demo-projects/*.md',
+  { eager: true },
+)
+
+const personBlogModules = import.meta.glob<{ attributes: any; html: string }>(
+  '../content/personal-blog/*.md',
+  { eager: true },
+)
+
+export const blogContent = parseModules(blogModules)
+export const demoProjectsContent = parseModules(demoProjectsModules)
+export const personalBlogContent = parseModules(personBlogModules)

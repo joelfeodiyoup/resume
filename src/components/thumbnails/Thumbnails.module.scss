@@ -1,0 +1,35 @@
+.thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  .expanded {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    &.open {
+      z-index: 10;
+      backdrop-filter: blur(1px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        background: black;
+        border: 2px solid var(--accent);
+        padding: 2px;
+        max-width:90vw;
+        max-height:90vh;
+      }
+    }
+  }
+  .thumbnails-img {
+    border: 2px solid var(--accent);
+    padding: 2px;
+    cursor: pointer;
+    width: 180px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+}
