@@ -2,7 +2,6 @@
 title: Isometric Browser Game
 date: 2024-06-15
 slug: isometric-browser-game
-excerpt:
 tags: frontend, react, state, isometric graphics
 images: isometric_game_01, isometric_game_02, isometric_game_03
 url: https://github.com/joelfeodiyoup/isometric_engine_2024
