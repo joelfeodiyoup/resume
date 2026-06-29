@@ -9,7 +9,6 @@ export const Route = createFileRoute('/blog/')({
 function BlogIndex() {
   return (
     <div className="mx-auto max-w-4xl p-8">
-      <h1 className="mb-8 text-4xl font-bold">Blog</h1>
       <p>
         The purpose of these blogs is to catalogue some things I'm interested
         in, or know something about. In my experience, the everyday life of a

@@ -2,7 +2,7 @@
 title: Debugging strategies
 date: 2026-05-28
 slug: debugging-strategies
-excerpt: 
+excerpt:
 ---
 
 Debugging is very ubiquitous. Nevertheless, I think it can be worth being conscious of the tools/approaches/options available.
@@ -16,6 +16,7 @@ These are some I've found useful
 Usually it's more of a preventative thing. But I have worked on codebases that had runtime errors due to insufficient tsconfig settings. You can actually have nested tsconfig settings, so you can technically turn some on for subdirectories and see which errors might exist. Usually the error should point you to the exact spot where the error occurred, which would give a good hint at the error. But, still, it can sometimes be useful.
 
 After resolving some production bug, it could also be worth looking at typescript to see if you're using it in the best way possible, to prevent the issues before they reach there. e.g.:
+
 - check module boundaries (user input, api responses, etc)
 - graphql servers can return their schema, allowing a client to verify that the shape of their queries is valid. Otherwise, usually the graphql server will just error when it receives something it doesn't expect
 - tRPC (https://trpc.io/) to add typescript typing to api requests - to be honest, I haven't used it, but it looks compelling
@@ -23,7 +24,7 @@ After resolving some production bug, it could also be worth looking at typescrip
 
 ## chrome dev tools
 
-Personally I use it heavily in developing new code and debugging.
+It goes without saying. And also not much needs to be said. Personally I use it heavily in developing new code and debugging.
 
 ## source tab
 
@@ -35,10 +36,10 @@ You should also have sourcemaps generated from your build tool, so that you can 
 
 Beyond the obvious uses, sometimes using simulated slow network can find the cause of odd errors.
 
-For gql, I have found it really handy to add `?method=${methodName}` to the endpoint URL. It should be ignored by the server, but can be very useful to speed up identification of specific requests.
+For gql, I have found it really handy to add `?method=${methodName}` to the endpoint URL. It should be ignored by the server, but can be very useful to speed up identification of specific requests. I added this while working at lifelenz and myra.
 
 - api calls
-- slow requests 
+- slow requests
 - failed requests
 
 ## profiler / performance tab
@@ -54,6 +55,7 @@ I feel a little bit dirty every time I write a console log to debug. I have memo
 Personally I've been frustrated by bad logging before which wastes time. Whenever I can, I would attach a debugger and go directly to the cause.
 
 However, I have found logging useful:
+
 - identifying specific customer's issues. E.g. there was once a display issue which, through the logs, I found was caused only from a very specific iphone/browser combination, which led to discovering an unsupported css property.
 - debugging issues that only occur in production for specific customers and data. E.g. some corrupted customer data in production
 - environments I can't easily attach a debugger to: for example ci/cd where node version changes can break builds
@@ -72,6 +74,7 @@ When a database query is slow, these commands show you the query execution plan 
 `EXPLAIN ANALYZE` runs it and shows actual timing.
 
 Look for:
+
 - sequential scans on large tables (usually need an index)
 - high cost operations
 - missing indexes on JOIN/WHERE columns
@@ -91,11 +94,13 @@ Obviously if something is not working right in docker, then docker logs will be 
 When a request spans multiple services, you need to trace it across boundaries.
 
 Tools:
+
 - OpenTelemetry / Jaeger
 - Correlation IDs (pass requestId through all services)
 - Distributed logs aggregation (ELK stack, Datadog)
 
 Key debugging approaches:
+
 - trace a single request across services to see where it fails
 - look for partial failures (service A succeeded, service B failed)
 - check for timing issues (timeouts, race conditions)

@@ -137,6 +137,15 @@ const content: { title: React.ReactNode; content: React.ReactNode }[] = [
             continually reading. I usually have 10-25 books in my 'current'
             collection in my Kindle. Some topics I like are fiction/science
             fiction classics, history, etc
+            <br />
+            <Thumbnails
+              imgs={[
+                {
+                  src: '/resume/bookshelf.png',
+                  alt: 'bookshelf',
+                },
+              ]}
+            />
           </li>
           <li>
             <strong>drawing</strong> - I picked up this hobby again as an adult
