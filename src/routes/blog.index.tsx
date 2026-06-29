@@ -44,7 +44,7 @@ function BlogIndex() {
                   day: 'numeric',
                 })}
               </time>
-              <p className="mt-4 text-gray-700" style={{ color: 'white' }}>
+              <p className="mt-4 text-gray-700" style={{ color: 'var(--fg)' }}>
                 {post.excerpt}
               </p>
               <span className="mt-4 inline-block text-blue-600 group-hover:underline">

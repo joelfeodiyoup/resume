@@ -18,11 +18,11 @@ body {
 
 
 :root {
-  --bg: #232323;
-  --bg-highlight: color-mix(in srgb, var(--bg) 100%, white 10%);
-  --fg: #ececec;
-  --accent: #119b70;
-  --accent-highlight: color-mix(in srgb, var(--accent) 80%, white 50%);
+  --accent: #3b82f6;
+  --bg: color-mix(in srgb, var(--accent) 12%, #000 88%);
+  --fg: #f1f5f9;
+  --bg-highlight: color-mix(in srgb, var(--bg) 100%, var(--fg) 10%);
+  --accent-highlight: color-mix(in srgb, var(--accent) 80%, var(--gf) 50%);
 }
 
 ::selection {
