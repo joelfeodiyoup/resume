@@ -1,4 +1,14 @@
-export const Pill = ({ children }: { children: React.ReactNode }) => {
+export const Pills = ({ pills }: { pills: React.ReactNode[] }) => {
+  return (
+    <span style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+      {pills.map((pill, i) => (
+        <Pill key={i}>{pill}</Pill>
+      ))}
+    </span>
+  )
+}
+
+const Pill = ({ children }: { children: React.ReactNode }) => {
   return (
     <span
       style={{

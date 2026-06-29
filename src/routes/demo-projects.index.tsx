@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { demoProjectsContent } from '../lib/blog'
 import styles from './DemoProjects.module.scss'
-import { Pill } from '#/components/pill/Pill'
+import { Pills } from '#/components/pill/Pill'
 import { imagesByKeys } from './about.images.ts'
 import { Thumbnails } from '#/components/thumbnails/Thumbnails.tsx'
 
@@ -22,13 +22,7 @@ function RouteComponent() {
           {project.images.length && (
             <Thumbnails imgs={imagesByKeys(project.images)} />
           )}
-          {project.tags.length && (
-            <p style={{ display: 'flex', gap: '0.5rem' }}>
-              {project.tags.map((tag) => (
-                <Pill>{tag}</Pill>
-              ))}
-            </p>
-          )}
+          {project.tags.length && <Pills pills={project.tags} />}
         </section>
       ))}
     </section>

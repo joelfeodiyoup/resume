@@ -49,8 +49,9 @@ const content: { title: React.ReactNode; content: React.ReactNode }[] = [
         <ul>
           <li>
             <strong>cycling</strong> - I once spent 2-3 months cycling from
-            Calais, France, to Vienna, Austria. These days, I enjoy riding and
-            sleeping in forests with my hammock on warm nights.
+            Calais, France, to Vienna, Austria. I have also cycled across parts
+            of Japan. These days, I enjoy riding and sleeping in forests with my
+            hammock on warm nights.
             <br />
             <Thumbnails
               imgs={imagesByKeys([
