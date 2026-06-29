@@ -11,7 +11,11 @@ const content: { title: React.ReactNode; content: React.ReactNode }[] = [
     title: 'professional background',
     content: (
       <>
-        <p>I've been a full stack developer for nearly 10 years.</p>
+        <p>
+          I've been a full stack developer for nearly 10 years. See the other
+          sections for more my professional experience. Read on for some more
+          general context of who I am.
+        </p>
       </>
     ),
   },
