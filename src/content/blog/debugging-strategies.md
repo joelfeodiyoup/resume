@@ -2,7 +2,8 @@
 title: Debugging strategies
 date: 2026-05-28
 slug: debugging-strategies
-excerpt:
+tags: debugging, DevOps, performance, tools
+excerpt: A comprehensive toolkit of debugging approaches from browser dev tools and TypeScript to distributed tracing, SQL query analysis, and APM for production systems.
 ---
 
 Debugging is very ubiquitous. Nevertheless, I think it can be worth being conscious of the tools/approaches/options available.

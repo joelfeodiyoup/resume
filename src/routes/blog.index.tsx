@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { blogContent } from '../lib/blog'
 import styles from './blog.module.scss'
+import { Pills } from '#/components/pill/Pill'
 
 export const Route = createFileRoute('/blog/')({
   component: BlogIndex,
@@ -35,6 +36,7 @@ function BlogIndex() {
               <h2 className="text-2xl font-bold group-hover:text-blue-600">
                 {post.title}
               </h2>
+              <Pills pills={post.tags} />
               <time className="mt-2 block text-sm text-gray-600">
                 {new Date(post.date).toLocaleDateString('en-US', {
                   year: 'numeric',
@@ -42,7 +44,9 @@ function BlogIndex() {
                   day: 'numeric',
                 })}
               </time>
-              <p className="mt-4 text-gray-700">{post.excerpt}</p>
+              <p className="mt-4 text-gray-700" style={{ color: 'white' }}>
+                {post.excerpt}
+              </p>
               <span className="mt-4 inline-block text-blue-600 group-hover:underline">
                 Read more →
               </span>

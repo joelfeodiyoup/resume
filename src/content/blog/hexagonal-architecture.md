@@ -2,7 +2,8 @@
 title: Hexagonal architecture
 date: 2026-06-05
 slug: hexagonal-architecture
-excerpt:
+tags: architecture, SOLID, design patterns, testing
+excerpt: Understanding hexagonal architecture (ports and adapters pattern) as a way to make systems testable and technology-agnostic by separating business logic from infrastructure through interfaces.
 ---
 
 tl;dr : I think of it as N(3)-tier, but where the middle layer, business logic, relies upon an interface rather than a concrete class. There's a bit more to it. But it's largely about separating things by using interfaces.

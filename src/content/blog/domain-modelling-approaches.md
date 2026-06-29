@@ -2,7 +2,8 @@
 title: Domain modeling approaches
 date: 2026-06-05
 slug: domain-modeling-approaches
-excerpt:
+tags: architecture, design patterns, DDD, typescript
+excerpt: Exploring three domain modeling philosophies—rich domain model (DDD), anemic domain model, and functional domain model—and how to choose the right approach for your business logic.
 ---
 
 How to handle data within the code.

@@ -2,7 +2,8 @@
 title: SOLID software architecture principles
 date: 2026-05-28
 slug: SOLID principles
-excerpt:
+tags: architecture, SOLID, design patterns, best practices
+excerpt: Practical notes on SOLID principles—what they mean in reality, how they relate to hexagonal architecture, and how to apply them without over-engineering.
 ---
 
 `SOLID` is pretty popular, but what does it mean, in reality? How does it relate to hexagonal, N-tiered, etc, architecture?

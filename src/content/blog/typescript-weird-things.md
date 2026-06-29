@@ -2,7 +2,8 @@
 title: Typescript interfaces vs types
 date: 2026-06-19
 slug: ts-interfaces-vs-types
-excerpt:
+tags: typescript, language features, best practices
+excerpt: Clarifying the often-confusing differences between TypeScript interfaces and types, including extension syntax, declaration merging, capabilities, and performance considerations.
 ---
 
 Some things in typescript are a bit weird, or sometimes can be a bit confusing. Sometimes they're just divergences that are difficult to remember. I'll list a few, to help myself.
