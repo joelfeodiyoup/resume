@@ -6,6 +6,7 @@ export interface BlogPost {
   html: string
   tags: string[]
   images: string[]
+  url?: string
 }
 
 type ModuleRecord = Record<string, { attributes: any; html: string }>
@@ -22,6 +23,7 @@ export const parseModules = (modules: ModuleRecord) => {
         html: module.html,
         tags: (module.attributes.tags ?? '').split(', ') as string[],
         images: (module.attributes.images ?? '').split(', ') as string[],
+        url: module.attributes.url ?? undefined,
       }
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())

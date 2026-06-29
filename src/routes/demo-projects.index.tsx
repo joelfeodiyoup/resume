@@ -15,6 +15,7 @@ function RouteComponent() {
       {demoProjectsContent.allContent.map((project) => (
         <section key={project.title} className={styles['demo-project']}>
           <h2>{project.title}</h2>
+          <a href={project.url}>link to repo + more detailed readme</a>
           <div
             className="mt-8"
             dangerouslySetInnerHTML={{ __html: project.html }}

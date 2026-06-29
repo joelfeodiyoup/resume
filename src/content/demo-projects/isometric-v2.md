@@ -5,9 +5,8 @@ slug: isometric-browser-game
 excerpt:
 tags: frontend, react, state, isometric graphics
 images: isometric_game_01, isometric_game_02, isometric_game_03
+url: https://github.com/joelfeodiyoup/isometric_engine_2024
 ---
-
-<a href="https://github.com/joelfeodiyoup/isometric_engine_2024">link to repo + more detailed readme</a>
 
 This was an attempt to make a 2d isometric game in the browser.
 

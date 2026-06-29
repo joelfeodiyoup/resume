@@ -2,11 +2,9 @@
 title: DB Tree Permission System
 date: 2024-06-15
 slug: isometric-browser-game
-tags: backend, nodejs, authentication, db
-excerpt:
+tags: backend, nodejs, authentication, db, sql queries
+url: https://github.com/joelfeodiyoup/recursive-database-draft
 ---
-
-<a href="https://github.com/joelfeodiyoup/recursive-database-draft">link to repo + more detailed readme</a>
 
 This is a solution to build a system that:
 
