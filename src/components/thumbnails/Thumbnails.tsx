@@ -4,7 +4,7 @@ import styles from './Thumbnails.module.scss'
 export const Thumbnails = ({
   imgs,
 }: {
-  imgs: { src: string; alt: string }[]
+  imgs: { src: string; thumbnail: string; alt: string }[]
 }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null,
@@ -29,7 +29,7 @@ export const Thumbnails = ({
         <div key={img.alt}>
           <img
             onClick={() => setSelectedImageIndex(i)}
-            src={img.src}
+            src={img.thumbnail}
             alt={img.alt}
             className={styles['thumbnails-img']}
           ></img>

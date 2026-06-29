@@ -1,5 +1,6 @@
 import { Thumbnails } from '#/components/thumbnails/Thumbnails'
 import { createFileRoute } from '@tanstack/react-router'
+import { imagesByKeys } from './about.images.ts'
 
 export const Route = createFileRoute('/about/')({
   component: RouteComponent,
@@ -52,24 +53,12 @@ const content: { title: React.ReactNode; content: React.ReactNode }[] = [
             sleeping in forests with my hammock on warm nights.
             <br />
             <Thumbnails
-              imgs={[
-                {
-                  src: '/resume/cycling_france.png',
-                  alt: 'cycling in france',
-                },
-                {
-                  src: '/resume/cycling_hammock.png',
-                  alt: 'hammock camping',
-                },
-                {
-                  src: '/resume/cycling_japan.png',
-                  alt: 'cycling in japan',
-                },
-                {
-                  src: '/resume/cycling_dunwich.png',
-                  alt: 'cycling in dunwich dynamo',
-                },
-              ]}
+              imgs={imagesByKeys([
+                'cycling_france',
+                'cycling_hammock',
+                'cycling_japan',
+                'cycling_dunwich',
+              ])}
             />
           </li>
           <li>
@@ -77,32 +66,14 @@ const content: { title: React.ReactNode; content: React.ReactNode }[] = [
             completed a 58km ultramarathon. I've attended the Saturday 5km
             parkrun over 250 times, since 2015.
             <br />
-            <Thumbnails
-              imgs={[
-                {
-                  src: '/resume/strava_five_peaks.png',
-                  alt: 'ultramarathon run',
-                },
-              ]}
-            />
+            <Thumbnails imgs={imagesByKeys(['strava_five_peaks'])} />
           </li>
           <li>
             <strong>jazz guitar</strong> - in 2007 I studied jazz guitar at a
             conservatory. I've kept up the interest, reading about jazz music
             theory, styles, etc
             <br />
-            <Thumbnails
-              imgs={[
-                {
-                  src: '/resume/jazz_guitar.jpg',
-                  alt: 'guitar + jazz books',
-                },
-                {
-                  src: '/resume/synthesiser.png',
-                  alt: 'music_devices',
-                },
-              ]}
-            />
+            <Thumbnails imgs={imagesByKeys(['jazz_guitar', 'synthesiser'])} />
           </li>
 
           <li>
@@ -112,20 +83,11 @@ const content: { title: React.ReactNode; content: React.ReactNode }[] = [
             covering my strava heatmap.
             <br />
             <Thumbnails
-              imgs={[
-                {
-                  src: '/resume/strava_heatmap.png',
-                  alt: 'Strava heatmap showing hiking routes',
-                },
-                {
-                  src: '/resume/hike_sunset.jpg',
-                  alt: 'sunset in bavarian alps',
-                },
-                {
-                  src: '/resume/hiking_in_snow.png',
-                  alt: 'me hiking in the snow',
-                },
-              ]}
+              imgs={imagesByKeys([
+                'strava_heatmap',
+                'hike_sunset',
+                'hiking_in_snow',
+              ])}
             />
           </li>
           <li>
@@ -138,30 +100,12 @@ const content: { title: React.ReactNode; content: React.ReactNode }[] = [
             collection in my Kindle. Some topics I like are fiction/science
             fiction classics, history, etc
             <br />
-            <Thumbnails
-              imgs={[
-                {
-                  src: '/resume/bookshelf.png',
-                  alt: 'bookshelf',
-                },
-              ]}
-            />
+            <Thumbnails imgs={imagesByKeys(['bookshelf'])} />
           </li>
           <li>
             <strong>drawing</strong> - I picked up this hobby again as an adult
             <br />
-            <Thumbnails
-              imgs={[
-                {
-                  src: '/resume/drawing.png',
-                  alt: 'drawing of a house',
-                },
-                {
-                  src: '/resume/drawing_02.png',
-                  alt: 'a drawing',
-                },
-              ]}
-            />
+            <Thumbnails imgs={imagesByKeys(['drawing', 'drawing_02'])} />
           </li>
         </ul>
       </>
