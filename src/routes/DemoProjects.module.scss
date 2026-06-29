@@ -2,7 +2,11 @@
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
+  h2 {
+    margin: 0;
+  }
   .demo-project {
     border: 2px solid var(--accent);
+    padding: 1rem;
   }
 }

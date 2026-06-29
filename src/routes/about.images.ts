@@ -1,10 +1,10 @@
 const thumbnails = {
-  ...import.meta.glob('../assets/images/about_images/*.png', {
+  ...import.meta.glob('../assets/images/*.png', {
     query: { format: 'webp', w: 250 },
     import: 'default',
     eager: true,
   }),
-  ...import.meta.glob('../assets/images/about_images/*.jpg', {
+  ...import.meta.glob('../assets/images/*.jpg', {
     query: { format: 'webp', w: 250 },
     import: 'default',
     eager: true,
@@ -12,19 +12,19 @@ const thumbnails = {
 }
 
 const fullImages = {
-  ...import.meta.glob('../assets/images/about_images/*.png', {
+  ...import.meta.glob('../assets/images/*.png', {
     query: { format: 'webp' },
     import: 'default',
     eager: true,
   }),
-  ...import.meta.glob('../assets/images/about_images/*.jpg', {
+  ...import.meta.glob('../assets/images/*.jpg', {
     query: { format: 'webp' },
     import: 'default',
     eager: true,
   }),
 }
 
-export const about_images = Object.entries(thumbnails).reduce(
+export const images = Object.entries(thumbnails).reduce(
   (acc, [path, thumbnail]) => {
     const key =
       path
@@ -42,5 +42,5 @@ export const about_images = Object.entries(thumbnails).reduce(
   {} as Record<string, { thumbnail: string; src: string; alt: string }>,
 )
 
-export const aboutImagesByKeys = (keys: string[]) =>
-  keys.map((key) => about_images[key]).filter(Boolean)
+export const imagesByKeys = (keys: string[]) =>
+  keys.map((key) => images[key]).filter(Boolean)

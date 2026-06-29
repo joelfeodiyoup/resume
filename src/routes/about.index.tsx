@@ -1,6 +1,6 @@
 import { Thumbnails } from '#/components/thumbnails/Thumbnails'
 import { createFileRoute } from '@tanstack/react-router'
-import { aboutImagesByKeys as imagesByKeys } from './about.images.ts'
+import { imagesByKeys } from './about.images.ts'
 
 export const Route = createFileRoute('/about/')({
   component: RouteComponent,

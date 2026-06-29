@@ -12,7 +12,6 @@ export const Route = createFileRoute('/blog/$slug')({
 
 function BlogPost() {
   const post = Route.useLoaderData()
-  const { Component } = post
 
   return (
     <div className="mx-auto max-w-4xl p-8">
@@ -26,9 +25,10 @@ function BlogPost() {
           })}
         </time>
 
-        <div className="mt-8">
-          <Component />
-        </div>
+        <div
+          className="mt-8"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
       </article>
     </div>
   )

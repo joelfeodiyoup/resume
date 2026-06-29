@@ -3,36 +3,26 @@ export interface BlogPost {
   title: string
   date: string
   excerpt: string
+  html: string
   tags: string[]
-  Component: React.ComponentType
+  images: string[]
 }
 
-type MdxModule = {
-  default: React.ComponentType
-  frontmatter?: any
-  title?: string
-  date?: string
-  excerpt?: string
-  slug?: string
-  tags?: string
-}
-
-type ModuleRecord = Record<string, MdxModule>
+type ModuleRecord = Record<string, { attributes: any; html: string }>
 
 export const parseModules = (modules: ModuleRecord) => {
   const allContent = Object.entries(modules)
     .map(([path, module]) => {
-      const slug = path.replace('../content/blog/', '').replace('.mdx', '')
-      const frontmatter: MdxModule = module.frontmatter || module
-      const blogPost: BlogPost = {
+      const slug = path.replace('../content/blog/', '').replace('.md', '')
+      return {
         slug,
-        title: (frontmatter.title || module.title) ?? '',
-        date: (frontmatter.date || module.date) ?? '',
-        excerpt: (frontmatter.excerpt || module.excerpt) ?? '',
-        tags: ((frontmatter.tags || module.tags) ?? '').split(', '),
-        Component: module.default,
+        title: module.attributes.title,
+        date: module.attributes.date,
+        excerpt: module.attributes.excerpt,
+        html: module.html,
+        tags: (module.attributes.tags ?? '').split(', ') as string[],
+        images: (module.attributes.images ?? '').split(', ') as string[],
       }
-      return blogPost
     })
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   const getContent = (slug: string) =>
@@ -44,17 +34,18 @@ export const parseModules = (modules: ModuleRecord) => {
   }
 }
 
-const blogModules = import.meta.glob<MdxModule>('../content/blog/*.mdx', {
-  eager: true,
-})
-
-const demoProjectsModules = import.meta.glob<MdxModule>(
-  '../content/demo-projects/*.mdx',
+const blogModules = import.meta.glob<{ attributes: any; html: string }>(
+  '../content/blog/*.md',
   { eager: true },
 )
 
-const personBlogModules = import.meta.glob<MdxModule>(
-  '../content/personal-blog/*.mdx',
+const demoProjectsModules = import.meta.glob<{ attributes: any; html: string }>(
+  '../content/demo-projects/*.md',
+  { eager: true },
+)
+
+const personBlogModules = import.meta.glob<{ attributes: any; html: string }>(
+  '../content/personal-blog/*.md',
   { eager: true },
 )
 
