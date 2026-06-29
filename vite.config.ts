@@ -5,7 +5,9 @@ import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 
 import viteReact from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import { plugin as markdownPlugin, Mode } from 'vite-plugin-markdown'
+import mdx from '@mdx-js/rollup'
+import remarkFrontmatter from 'remark-frontmatter'
+import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
 import { imagetools } from 'vite-imagetools'
 
 const config = defineConfig({
@@ -15,14 +17,16 @@ const config = defineConfig({
     devtools(),
     tailwindcss(),
     imagetools(),
+    mdx({
+      remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
+    }),
     tanstackStart({
       prerender: {
         enabled: true,
         crawlLinks: true,
-      }
+      },
     }),
     viteReact(),
-    markdownPlugin({ mode: [Mode.HTML] }),
   ],
 })
 

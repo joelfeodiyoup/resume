@@ -1,0 +1,8 @@
+.demo-projects {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  .demo-project {
+    border: 2px solid var(--accent);
+  }
+}
