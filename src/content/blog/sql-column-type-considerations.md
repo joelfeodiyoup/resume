@@ -3,6 +3,7 @@ title: sql column type considerations
 date: 2026-07-02
 slug: sql-column-type-considerations
 excerpt: An interview question about SQL column types for tree structures led me to research PostgreSQL internals—and realize how database-to-GraphQL tooling can constrain architectural decisions.
+tags: sql, database design, postgresql, performance, architecture
 ---
 
 This is inspired by an interview question I received, where I was fairly sure the interviewer was incorrect. And I wanted to later investigate a little more.
